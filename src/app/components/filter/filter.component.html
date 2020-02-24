@@ -1,0 +1,9 @@
+<div class="mx-10">
+    <label class="label">Filter By</label>
+    <div class="my-10 slider">
+        <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+    </div>
+    <div class="my-10 py-2 text-center">
+        <button mat-raised-button color="color-primary" (click)="applyFilter(minValue,maxValue)">APPLY</button>
+    </div>
+</div>

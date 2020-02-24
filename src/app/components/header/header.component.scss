@@ -1,0 +1,28 @@
+.header{
+    padding: 10px 20px;
+    background-color: #2874f0;
+    display: flex;
+    justify-content: space-between;
+    i{
+        font-size: 28px;
+        padding: 0 10px;
+        cursor: pointer;
+    }
+    .logo{
+        color: #ffb300;
+        font-size: 32px;
+    }   
+    .cart{
+        position: relative;
+        display: inline-block;
+        .cart-count{
+            position: absolute;
+            padding: 0px 5px;
+            border-radius: 10px;
+            background-color: #ffb300;
+            color: #000;
+            right: 0;
+            top: -5px;
+        }
+    }
+}

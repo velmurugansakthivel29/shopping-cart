@@ -1,0 +1,65 @@
+<div class="cart-container">
+    <div *ngIf="selectedProducts.length === 0" class="panel semi-bold">No Items added in the Cart.
+        <a class="mx-10" [routerLink]="['/']">To Add Products</a>
+    </div>
+    <div *ngIf="showMinNotification" class="panel show-notification"> Atleast minimum 1 item
+        <i class="fa fa-times-circle-o mx-10 semi-bold" (click)="showMinNotification = !showMinNotification" aria-hidden="true"></i>
+    </div>
+    <div *ngIf="selectedProducts.length !== 0" class="cart-section">       
+        <div *ngFor="let product of selectedProducts">
+            <div class="img"> <img src="{{product.img_url}}" alt="Product Image"> </div>
+            <div class="product-detail">
+                <div class="mx-2">
+                    <div>
+                        {{ product.name}}
+                    </div>
+                    <div>
+                        <span class="semi-bold">{{product.price}}</span>
+                        <span class="color-grey mx-10">{{getOriginalAmount(product.price,product.discount)}}</span>
+                        <span class="color-green">{{product.discount }} % off</span>
+                    </div>
+                </div>
+                <div class="count-section">
+                    <button class="fab-btn" (click)="updateCount(product,productCount.value, - 1)">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+                    <input class="mx-10" min="1" type="number" (keyup)="updateCount(product,productCount.value , 0)"
+                        #productCount value="{{ product.selectedNo }}" />
+                    <button class="fab-btn" (click)="updateCount(product,productCount.value , 1)">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div>
+                    <button mat-raised-button color="warn" (click)="removeCart(product.id)">REMOVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="selectedProducts.length !== 0" class="price-section">
+        <table>
+            <thead>
+                <th colspan="2">
+                    PRICE DETAILS
+                </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Price ( Item)</td>
+                    <td>{{ price }}</td>
+                </tr>
+                <tr>
+                    <td>Discount :</td>
+                    <td>{{ discount }}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="semi-bold">Total Payable</td>
+                    <td class="semi-bold">{{ total }}</td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+    </div>
+</div>

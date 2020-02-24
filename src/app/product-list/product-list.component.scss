@@ -1,0 +1,92 @@
+.product-page{
+    display: flex;    
+    height: 100%;
+    .filter-section{
+        width: 220px;
+        border-right: 1px solid #ddd;
+        box-shadow: 3px 0px 0px 0px #ececec;
+        padding: 15px 0;
+        @media(max-width: 768px){
+            display: none;
+        }
+    }
+    .product-section{
+        width: calc(100% - 220px);
+        @media(max-width: 768px){
+            width: 100%;
+        }
+        .mobile-sort{
+            display: none;
+            @media(max-width: 768px){
+                display: flex;
+                box-shadow: 1px 1px 4px 1px #c1c1c1;
+                padding: 5px;
+                label{
+                    padding: 10px;
+                    cursor: pointer;
+                    font-weight: 600;
+                    flex-basis: 50%;
+                    text-align: center;
+                    &:first-child{
+                        border-right: 1px solid #ddd;
+                    }
+                }
+            }
+        }
+        .sort-section{
+            box-shadow: 1px 1px 4px 1px #c1c1c1;
+            padding: 10px;
+                @media(max-width: 768px){
+                    display: none;
+                }            
+        }       
+        .product-list{
+            display: flex;
+            flex-wrap: wrap;
+            .product{
+                background-color: #f9f9f9;
+                margin: 10px;
+                flex-basis: 15%;
+                padding: 20px;
+                box-shadow: 3px 1px 1px 1px #ececec;
+
+                @media(max-width: 768px){
+                    flex-basis: 100%;
+                    padding: 10px;
+                }
+                .img{
+                    width: 200px;
+                    img{
+                        width: 100%;
+                    }
+                    @media(max-width: 768px){
+                        width: 100%;
+                    }
+                }
+                .price{
+                    span{
+                        margin: 0 5px;
+                        &:first-child{
+                            margin-left: 0;
+                        }
+                    }
+                    font-weight: 500;
+                }
+                .cart-btn{
+                    background-color: #ffb300;
+                    color: #000;
+                    border-radius: 15px;
+                    padding: 10px 15px;
+                    border: 0;
+                    cursor: pointer;
+                    font-size: 12px;
+                    font-weight: 600;
+                    &.go-cart{
+                        background-color: #2874f0;
+                        color: #fff;                    
+                    }
+                }
+            }
+        }
+    }
+}

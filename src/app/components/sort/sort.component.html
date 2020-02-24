@@ -1,0 +1,6 @@
+<label class="label">Sort By</label>
+<mat-radio-group [(ngModel)]="selectedSort" (change)="changeSort(selectedSort)">
+  <mat-radio-button  *ngFor="let sort of sortOptions | keyvalue" [value]="sort.key">
+    {{sort.value}}
+  </mat-radio-button>
+</mat-radio-group>

@@ -1,0 +1,33 @@
+<div class="product-page">
+  <div class="filter-section">
+    <app-filter (filterRangeEmitter)="selectedRange($event)"></app-filter>
+  </div>
+  <div class="product-section">
+    <div class="mobile-sort">
+      <label class="mobile-dialog" (click)="openSortDialog()">
+        <i class="fa fa-sort" aria-hidden="true"></i> Sort</label>
+      <label class="mobile-dialog" (click)="openFilterDialog()">
+        <i class="fa fa-filter" aria-hidden="true"></i>
+        Filter</label>
+    </div>
+    <div class="sort-section">
+      <app-sort (selectedSortEmitter)="selectedSort($event)"></app-sort>
+    </div>
+    <div class="product-list">
+      <div class="product" *ngFor="let product of productList">
+        <div class="img"> <img src="{{product.img_url}}" alt="Product Image"> </div>
+        <h4 class="py-2"> {{ product.name}}</h4>
+        <div class="price my-10">
+          <span class="semi-bold">
+            <i class="fa fa-inr" aria-hidden="true"></i> {{product.price}}</span>
+          <span class="color-grey text-overline">{{getTotalAmount(product.price,product.discount)}}</span>
+          <span class="color-green semi-bold">{{product.discount }} % off</span>
+        </div>
+        <div class="text-center py-2">
+          <button class="cart-btn go-cart" *ngIf="product.isAdded" (click)="addToCart(product)">Go to Cart</button>
+          <button class="cart-btn" *ngIf="!product.isAdded" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
