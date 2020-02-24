@@ -25,9 +25,12 @@
     "@ngrx/effects": "^8.6.0",
     "@ngrx/entity": "^8.6.0",
     "@ngrx/store": "^8.6.0",
+    "express": "^4.17.1",
     "ng5-slider": "^1.2.4",
+    "path": "^0.12.7",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
+    "typescript": "~3.7.5",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -52,7 +55,7 @@
     "typescript": "~3.7.5"
   },
   "engines": {
-    "node": "10.15.3",
-    "npm": "6.4.1"
+    "node": "12.16.0",
+    "npm": "6.13.4"
   }
 }
