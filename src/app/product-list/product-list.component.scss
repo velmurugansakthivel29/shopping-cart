@@ -43,6 +43,9 @@
         .product-list{
             display: flex;
             flex-wrap: wrap;
+            .panel{
+                width: 100%;
+            }
             .product{
                 background-color: #f9f9f9;
                 margin: 10px;
