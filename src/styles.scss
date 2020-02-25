@@ -1,4 +1,6 @@
 
+@import './assets/css/fontawesome.min.css';
+
 /* Regular */
 @font-face {
     font-family: "Roboto-Regular";
@@ -48,7 +50,6 @@ body { margin: 0; font-family: "Roboto-Regular"; }
     outline: 0;
 }
 
-
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -58,15 +59,11 @@ input[type=number]::-webkit-outer-spin-button {
     color: #ddd;
     font-size: 12px;
   }
-  ::-moz-placeholder { /* Firefox 19+ */
+  ::-moz-placeholder { /* Firefox */
     color: #ddd;
     font-size: 12px;
   }
   :-ms-input-placeholder { /* IE 10+ */
-    color: #ddd;
-    font-size: 12px;
-  }
-  :-moz-placeholder { /* Firefox 18- */
     color: #ddd;
     font-size: 12px;
   }
@@ -82,6 +79,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-family: "Roboto-Medium";
 }
 .mat-raised-button{
+    font-family: "Roboto-Medium";
     &.mat-color-primary{
         background-color:#2874f0;
         color: #fff;
